@@ -46,8 +46,8 @@ router.get('/:id', async (req, res, next) => {
             return res.status(404).json({ error: 'Not Found '}); 
         }
         res.json({ result: anuncio });
-    } catch (err) {
-        next(err);
+    } catch (error) {
+        next(error);
     }
 });
 
@@ -60,8 +60,8 @@ router.post('/', async (req, res, next) => {
         await anuncio.onsale();
         // Wait till the promise returned by onsale is resolved
         res.status(201).json({result: createdAnuncio}); // Return the agent created. Status 201 - created is more exact than 200 - OK
-    } catch (err) {
-        next(err);
+    } catch (error) {
+        next(error);
     }
 });
 
@@ -72,8 +72,8 @@ router.put('/:id', async (req, res, next) =>  {
         const anuncioData = req.body;
         const updatedAnuncio = await Anuncio.findOneAndUpdate({ _id: _id }, anuncioData, {new: true, useFindAndModify: false }); // with {new:true} it returns the anuncio updated
         res.json({ result: updatedAnuncio }); // Response with the update of the anuncio
-    } catch (err) {
-        next(err);
+    } catch (error) {
+        next(error);
     }
 });
 
@@ -83,8 +83,8 @@ router.delete('/:id', async (req,res,next)=>{
         const _id = req.params.id;
         await Anuncio.deleteOne({_id});
         res.status(200).json(); // Status 200 - OK is a good option, there is no options more exacts for Delate
-    } catch (err) {
-        next(err);
+    } catch (error) {
+        next(error);
     }
 });
 

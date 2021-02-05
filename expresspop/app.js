@@ -47,7 +47,7 @@ app.use(function(req, res, next) {
 
 // error handler - only error handler has err param
 app.use(function(err, req, res, next) {
-  // ¿Es un error de validación?
+  // Validation error?
   if (err.array) { // If is array method it is an validation error
     const errorInfo = err.array({ onlyFirstError: true })[0]; //onlyFirstError is an array method, only throws the first error, then we call the position [0]
     err.message = `Not valid - ${errorInfo.param} ${errorInfo.msg}`;

@@ -63,3 +63,16 @@ db.anuncios.insert({"nombre": "iPhone","venta": false,"precio": 50.00,"foto": "i
 
 From browser url:
 Use postman app, specify the url http://localhost:3000/api/anuncios type of Body and all the parameters
+
+## DELETE api/anuncios/:id ##
+
+
+
+## PUT api/anuncios/:id ##
+
+
+
+## View anuncio's photos ##
+To see the pictures of the productos: 
+Copy the name of the product from http://localhost:3000/api/anuncios
+Paste the name on the url http://localhost:3000/imagenes?image= (Car) and visit the url http://localhost:3000/imagenes?image=Car

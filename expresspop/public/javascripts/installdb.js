@@ -20,8 +20,9 @@ async function initDatabase() {
         //Add sample data from anuncios.json
         for (let i= 0; i<anuncios.length;i++){
             const newAnuncio = Anuncio.create(anuncios[i]);
-            console.log(newAnuncio);
         };
+        //res.status(201).json(); // Status 201 - Created
+        console.log('Data base initialiced');
 
     } catch (error) {
         console.log("Error during database initialization", error);
