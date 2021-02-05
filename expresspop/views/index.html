@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+
+    <% include cabecera.html %>
+
+    <h1><%= title %></h1>
+    <p>Welcome to <%= title %></p>
+    <p><strong><%= ejemplo%></strong></p>
+    <p><%=valorInyeccion%></p>
+    <p><%= anuncios %></p>
+    <p><%= anuncios1 %></p>
+    <p><%= anuncioslength %></p>
+    <h2>Inyecto una condición</h2>
+
+    <p> <% if (condicion.esPar) { %>
+      <p><% condicion.segundo %> es par</p>
+      <% } else { %>
+        <p><% condicion.segundo %> es impar</p>
+      <% } %>
+    </p>
+  </body>
+</html>
