@@ -9,10 +9,10 @@ const anuncioSchema = mongoose.Schema({
     photo: {type: String},
     tags: {type: Array, index: true}
 }, {
-    collection: 'anuncios' // without this name, mongoose will plurify the name of the model - Anuncio to name the collection 
+    collection: 'anuncios' // without this name, mongoose will plurify the name of the model - Anuncio to name the collection
 });
 
-// Do not use Arrow Function in mongoose methods. Mongoose uses 'this' and the Arrow Function asign the 'this' of current context
+// Do not use Arrow Function in mongoose methods. Mongoose uses 'this' and the Arrow Function asign the 'this' of current context 
 anuncioSchema.statics.lista = function(filtro, limit, skip, fields, sort) {
     const query = Anuncio.find(filtro);
     query.limit(limit);
