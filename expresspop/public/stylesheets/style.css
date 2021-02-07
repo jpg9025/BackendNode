@@ -11,8 +11,14 @@ h1 {
 }
 
 .image-intro {
-  align-content: center;
+  display: flex;
+  justify-content: center;
   margin: 2rem;
+}
+
+.image, img {
+  width: 640px;
+  height: 426px;
 }
 
 .resume {
@@ -43,11 +49,13 @@ h1 {
 }
 
 .title {
+  position: center;
   width: 99%;
   background-color: rgb(69, 129, 116);
   color: whitesmoke;
   padding: 0.5rem;
-  font-size: 1.5rem;
+  font-weight: bold;
+  font-size: 2rem;
   text-align: center;
 }
 

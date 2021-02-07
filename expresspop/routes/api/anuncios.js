@@ -11,6 +11,7 @@ router.get('/', async function(req, res, next) {
         const name = req.query.name; // req.query catch information received in url 
         const price = req.query.price; // req.query received a string but the model indicates that age is a number, monggose do the conversion
         const tags = req.query.tags;
+        const location = req.query.location;
         const limit = parseInt(req.query.limit); // limit is not in the model, we must parse it into a number
         const skip = parseInt(req.query.skip);
         const fields = req.query.fields; // http://localhost:3000/api/anuncios?fields=name%20-_id%20price
@@ -19,7 +20,7 @@ router.get('/', async function(req, res, next) {
         const filtro = {};
 
         if (name) {
-            filtro.name = name
+            filtro.name = new RegExp('^'+ req.query.name, "i"); // RegExp that allow to search by the start of the name
         }
         if (price) {
             filtro.price = price
@@ -27,6 +28,9 @@ router.get('/', async function(req, res, next) {
         if (tags) [
             filtro.tags = tags
         ]
+        if (location) {
+            filtro.location = location
+        }
 
         const resultado = await Anuncio.lista(filtro, limit, skip, fields, sort);
         // throw new Error('fallo intencionado, lianta');
@@ -37,7 +41,7 @@ router.get('/', async function(req, res, next) {
 });
 
 //GET /api/anuncios:id
-// Not need to indicate the route /api/anuncios cause all request received on this router are connected to /api/anuncios - rutas de API en app.js
+// Not need to indicate the route /api/anuncios because all request received on this router are connected to /api/anuncios - rutas de API en app.js
 router.get('/:id', async (req, res, next) => {
     try {
         const _id = req.params.id; // req.params is how it receive information from the URL
@@ -70,7 +74,7 @@ router.put('/:id', async (req, res, next) =>  {
     try {
         const _id = req.params.id;
         const anuncioData = req.body;
-        const updatedAnuncio = await Anuncio.findOneAndUpdate({ _id: _id }, anuncioData, {new: true, useFindAndModify: false }); // with {new:true} it returns the anuncio updated
+        const updatedAnuncio = await Anuncio.findOneAndUpdate({_id}, anuncioData, {new: true, useFindAndModify: false }); // with {new:true} it returns the anuncio updated
         res.json({ result: updatedAnuncio }); // Response with the update of the anuncio
     } catch (error) {
         next(error);

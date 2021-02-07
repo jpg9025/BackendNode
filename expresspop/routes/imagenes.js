@@ -10,7 +10,7 @@ router.get('/:image?', async (req, res, next) => {
     const image = req.query.image;
     const anuncio = await Anuncio.findOne({ name: image });
     if (!anuncio) {
-      return res.status(400).json({ error: ' Bad Request '}); 
+      return res.status(400).json({ error: ' Bad Request - there is not product with this name '}); 
     }
     res.locals.anuncio = {
       name: anuncio.name, 

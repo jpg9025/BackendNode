@@ -35,7 +35,7 @@ http://localhost:3000/api/anuncios
 ## SORT api/anuncios ##
 For sorting the list there are two options:
 
-From mongo terminal window:
+From mongo terminal window
 Sort by increasing price: db.anuncios.find().sort({price:1})
 Sort by decreasing price: db.anuncios.find().sort({price:-1})
 Sort by tags, lifestyle: db.anuncios.find({tags:'lifestyle'})
@@ -50,27 +50,26 @@ Sort by increasing price: http://localhost:3000/api/anuncios?sort=price
 Sort by decreasing price: http://localhost:3000/api/anuncios?sort=-price
 Sort by tags, lifystyle: http://localhost:3000/api/anuncios?tags=lifestyle
 Sort by tags, lifestyle and mobile: http://localhost:3000/api/anuncios?tags=lifestyle&tags=mobile
-Sort by tags, lifestyle or mobile:
+Sort by tags, lifestyle or mobile: http://localhost:3000/api/anuncios?tags=lifestyle&mobile
 Sort by name (a-z): http://localhost:3000/api/anuncios?sort=name
 Sort by decreasing name (z-a) and increasing price: http://localhost:3000/api/anuncios?sort=-name&price
-Sort by price (10-25): 
 
 ## POST api/anuncios ##
 For posting new anuncios there are two options:
 
 From mongo terminal window:
-db.anuncios.insert({"nombre": "iPhone","venta": false,"precio": 50.00,"foto": "iphone.jpg","tags": [ "lifestyle", "mobile"]})
+db.anuncios.insert({"name": "Motocicleta","sale": false,"price": 50.00,"photo": "motormotorbike.jpg","tags": [ "lifestyle", "motor"]})
+Include the picture of the product in /public/images to see the details in http://localhost:3000/imagenes?image=(Product)
 
 From browser url:
 Use postman app, specify the url http://localhost:3000/api/anuncios type of Body and all the parameters
 
 ## DELETE api/anuncios/:id ##
+From mongo terminal window: 
+db.anuncios.remove({"_id":ObjectId("Copy-and-paste-the-id-here")})
 
-
-
-## PUT api/anuncios/:id ##
-
-
+From browser url:
+Use postman app, specify the url http://localhost:3000/api/anuncios/copy-and-paste-the-id-here 
 
 ## View anuncio's photos ##
 To see the pictures of the productos: 

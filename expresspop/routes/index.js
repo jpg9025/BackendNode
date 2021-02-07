@@ -8,7 +8,7 @@ const anuncios = require('../anuncios.json');
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.locals.imageintro = {
-    photo: "/images/imageintro.jpg"
+    photo: "imageintro.jpg"
   };
   res.render('index');
 });

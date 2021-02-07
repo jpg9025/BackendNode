@@ -4,7 +4,7 @@
         "sale": true,
         "price": 215.30,
         "location": "Madrid",
-        "photo": "/images/bici.jpg",
+        "photo": "bici.jpg",
         "tags": [ "lifestyle", "motor"]
     },
     {
@@ -12,7 +12,7 @@
         "sale": false,
         "price": 50.00,
         "location": "Valencia",
-        "photo": "/images/iphone.jpg",
+        "photo": "iphone.jpg",
         "tags": [ "lifestyle", "mobile"]
     },
     {
@@ -20,7 +20,7 @@
         "sale": true,
         "price": 130.98,
         "location": "Barcelona",
-        "photo": "/images/headphonebeats.jpg",
+        "photo": "headphonebeats.jpg",
         "tags": [ "lifestyle", "mobile"]
     },
     {
@@ -28,7 +28,7 @@
         "sale": true,
         "price": 10.00,
         "location": "Madrid",
-        "photo": "/images/meetingroom.jpg",
+        "photo": "meetingroom.jpg",
         "tags": [ "work", "mobile"]
     },
     {
@@ -36,7 +36,7 @@
         "sale": true,
         "price": 54.00,
         "location": "Barcelona",
-        "photo": "/images/headphones.jpg",
+        "photo": "headphones.jpg",
         "tags": [ "work", "mobile"]
     },
     {
@@ -44,7 +44,7 @@
         "sale": true,
         "price": 20000.00,
         "location": "Madrid",
-        "photo": "/images/car.jpg",
+        "photo": "car.jpg",
         "tags": [ "lifestyle", "motor", "work"]
     }
 ]

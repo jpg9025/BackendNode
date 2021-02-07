@@ -23,16 +23,13 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser()); // Middleware  
 app.use(express.static(path.join(__dirname, 'public'))); // public is the only folder accesible for downloads
-// app.use(express.static('/pdf', 'e:\pdfs'));
 
 //API ROUTES
 app.use('/api/anuncios', require('./routes/api/anuncios'));
 
 //WebSite ROUTES
 app.use('/prueba', function(req,res, next){
-  // Two options
-  // res.send('ok'); // 1. Give a response
-  console.log('recibo una petición a ', req.originalUrl); // 2. print on termianl and let it pass
+  console.log('recibo una petición a ', req.originalUrl); 
   next();
 });
 

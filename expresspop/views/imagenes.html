@@ -10,7 +10,7 @@
         <% include cabecera.html %>
         <div class="wrapper">
             <div class="title">
-                <h1><%= anuncio.name %></h1>
+                <p><%= anuncio.name %></p>
             </div>
             <div class="container">
                 <div class="product-information">
@@ -22,7 +22,7 @@
                     </div>
                 </div>
                 <div class="image">
-                    <img src="<%= anuncio.photo %>" alt="">
+                    <img src="/images/<%= anuncio.photo %>" alt="">
                 </div>
             </div>
         </div>
